@@ -17,10 +17,10 @@ var app = (function(){
   const store = (itemKey, s) => window.localStorage.setItem(itemKey, s)
   const load = () => {
     const apiKey = item('apiKey') | window.location.hash.slice(1)
-    const systemPrompt = item('systemPrompt') | DEFAULT_STRATEGY_SYSTEM_PROMPT
-    const userPrompt = item('userPrompt') | DEFAULT_STRATEGY_USER_PROMPT
-    const judgeSystemPrompt = item('judgeSystemPrompt') | DEFAULT_JUDGE_SYSTEM_PROMPT
-    const judgeUserPrompt = item('judgeUserPrompt') | DEFAULT_JUDGE_USER_PROMPT
+    const systemPrompt = item('systemPrompt') || DEFAULT_STRATEGY_SYSTEM_PROMPT
+    const userPrompt = item('userPrompt') || DEFAULT_STRATEGY_USER_PROMPT
+    const judgeSystemPrompt = item('judgeSystemPrompt') || DEFAULT_JUDGE_SYSTEM_PROMPT
+    const judgeUserPrompt = item('judgeUserPrompt') || DEFAULT_JUDGE_USER_PROMPT
     query('.apiKey').value = apiKey
     query('.systemPrompt').value = systemPrompt
     query('.userPrompt').value = userPrompt
