@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <title>Airportparking Strategy Game</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+    <main class="container">
+			<img src="logo.png" />
+      <h1>Strategy Game</h1>
+      <h4>Airportparking Strategy Workshop 2025</h4>
+      <details class="configSection">
+        <summary>Config</summary>
+        <form class="config">
+          <label>API Key
+            <input class="apiKey" type="text" />
+          </label>
+          <label>Strategy System Prompt
+            <textarea class="systemPrompt" type="text"></textarea>
+          </label>
+          <label>Strategy User Prompt
+            <textarea class="userPrompt" type="text"></textarea>
+          </label>
+          <label>Judge System Prompt
+            <textarea class="judgeSystemPrompt" type="text"></textarea>
+          </label>
+          <label>Judge User Prompt
+            <textarea class="judgeUserPrompt" type="text"></textarea>
+          </label>
+          <label>Turns
+            <input class="turns" type="number" value="5" />
+          </label>
+        </form>
+     </details>
+     <section class="control">
+      <form>
+        <button class="run">Go</button>
+      </form>
+     </section>
+     <section class="strategies">
+      <h5>Strategies</h5>
+      <div class="strategies"></div>
+     </section>
+     <section class="ranked">
+      <div class="ranked"></div>
+     </section>
+    </main>
+		<script src="prompts.js"></script>
+		<script src="index.js"></script>
+  </body>
+</html>
