@@ -16,7 +16,7 @@ var app = (function(){
   const item = (itemKey) => window.localStorage.getItem(itemKey)
   const store = (itemKey, s) => window.localStorage.setItem(itemKey, s)
   const load = () => {
-    const apiKey = item('apiKey') | window.location.hash.slice(1)
+    const apiKey = item('apiKey') || window.location.hash.slice(1)
     const systemPrompt = item('systemPrompt') || DEFAULT_STRATEGY_SYSTEM_PROMPT
     const userPrompt = item('userPrompt') || DEFAULT_STRATEGY_USER_PROMPT
     const judgeSystemPrompt = item('judgeSystemPrompt') || DEFAULT_JUDGE_SYSTEM_PROMPT
