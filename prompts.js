@@ -105,4 +105,8 @@ Here is the list of strategies:
 $STRATEGIES
 
 Please rank the list of strategies and provide an explanation for your ranking.
+
+- group the strategies into short, medium, and long term horizon
+- for each group, synthesize the strategies into 2 - 3 most impactful strategies with an explanation
+- provide an overall summary of strategic plan for airportparking.ch
 `

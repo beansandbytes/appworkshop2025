@@ -85,13 +85,19 @@ var app = (function(){
   const objectives = ['Growth', 'Digital', 'Sustainable', 'Self-Service']
   const randomObjective = () => Math.floor(Math.random() * objectives.length)
 
+  const timeHorizons = ['Short-term - practical', 'Medium-term - ambitious', 'Long-term - visionary']
+  const randomTime = () => Math.floor(Math.random() * timeHorizons.length)
+
   const turn = async (i) => {
     const objective = objectives[randomObjective()]
+    const horizon = timeHorizons[randomTime()]
+
     const systemPrompt = query('.systemPrompt').value
-    const userPrompt = query('.userPrompt').value + '\n Focus on the objective ' + objective
+    const userPrompt = query('.userPrompt').value + '\n Focus on the objective ' + objective +
+        '\n and time horizon ' + horizon
     const answer = await generate(userPrompt, systemPrompt)
 
-    console.log(objective)
+    console.log(objective, horizon)
 
     strategies.push(answer)
 
@@ -100,6 +106,7 @@ var app = (function(){
     query('div.strategies').appendChild(el)
 
     if (i == 1) {
+      query('div.ranked').innerHTML = 'Ranking ...'
       return setTimeout(async () => rank(), DELAY) 
     }
     console.log(i)
